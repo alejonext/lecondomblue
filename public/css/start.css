@@ -1,0 +1,222 @@
+/**
+* Ink
+*
+* A set of tools for quick development of web interfaces.
+*
+* @package   Ink
+* @author    Sapo Ink Team
+* @license   http://opensource.org/licenses/MIT MIT
+* @link      http://ink.sapo.pt
+* @version   3.1.3
+*/
+/**
+ * Ink class names prefix
+ * Used in all of Inks components root elements
+ */
+/**
+ * Grid class names
+ */
+/**
+ * Alerts class names
+ */
+/**
+ * Badges class names
+ */
+/**
+ * Buttons class names
+ */
+/**
+ * Forms class names
+ */
+/**
+ * Labels class names
+ */
+/**
+ * Navigation class names
+ */
+/**
+ * Dropdown class names
+ */
+/**
+ * Tables class names
+ */
+/**
+ * Images class names
+ */
+/**
+ * JS UI components classe names
+ */
+/** 
+ * Sets the grids maximum width
+ * @var $grid-max-width (pixels|ems|percentage)
+ */
+/*!
+ * Sets the grids breakpoint
+ * 
+ * To add a new break point you'll need to add an element to the list.
+ * 
+ * Here's an example: ( class-name-prefix, minimum-width, maximum-width, gutter-width, no-media-query).
+ * 
+ * media: media type.
+ * class-name-prefix: this is the prefix used in tons of inks classes i.e.: large-100, small-40, etc.
+ * minimum-width: (pixels|null) the minimum width for the breakpoint 
+ * maximum-width: (pixels|null) the maximum width for the breakpoint 
+ * gutter-width: (ems) the width for the gutters (space between grid columns) for the breakpoint 
+ * no-media-query: (true|false) if you need to support IE8 set this to true on a single breakpoint.
+ *                 Since IE8 does not support the @media statement leaving one of the breakpoints
+ *                 outside a @media query let's you use the grid in IE8.
+ *  
+ */
+/* for xlarge screens not min and not max */
+@media screen and (min-width: 1261px) {
+  /* line 16, ../scss/mixins/_quick-start.scss */
+  #bottom-bar {
+    bottom: 1.5em;
+  }
+
+  /* your css for xlarge screens goes here ... */
+}
+/* for large screens min and max */
+@media screen and (min-width: 961px) and (max-width: 1260px) {
+  /* line 27, ../scss/mixins/_quick-start.scss */
+  #bottom-bar {
+    bottom: .75em;
+  }
+
+  /* your css for large screens goes here ... */
+}
+/* for medium screens min and max */
+@media screen and (min-width: 641px) and (max-width: 960px) {
+  /* line 27, ../scss/mixins/_quick-start.scss */
+  #bottom-bar {
+    bottom: .75em;
+  }
+
+  /* your css for medium screens goes here ... */
+}
+/* for small screens min and max */
+@media screen and (min-width: 321px) and (max-width: 640px) {
+  /* line 27, ../scss/mixins/_quick-start.scss */
+  #bottom-bar {
+    bottom: .75em;
+  }
+
+  /* your css for small screens goes here ... */
+}
+/* for tiny screens not min and max */
+@media screen and (max-width: 320px) {
+  /* line 39, ../scss/mixins/_quick-start.scss */
+  #bottom-bar {
+    bottom: 0;
+  }
+
+  /* your css for tiny screens goes here ... */
+}
+/* line 37, ../scss/start.scss */
+body.name {
+  background-image: url("back.png");
+  background-size: cover;
+  background-size: fixed;
+}
+
+/* line 43, ../scss/start.scss */
+#bottom-bar {
+  width: 100%;
+  z-index: 100;
+  position: fixed;
+}
+/* line 47, ../scss/start.scss */
+#bottom-bar nav {
+  position: relative;
+}
+
+/* line 52, ../scss/start.scss */
+a#logo > img {
+  max-width: 100px;
+}
+
+/* line 59, ../scss/start.scss */
+ul .control.button-group > .ink-button {
+  margin-left: 0;
+  margin-right: 0;
+}
+/* line 67, ../scss/start.scss */
+ul li.control-group {
+  visibility: visible;
+  -webkit-transition: all 1400ms ease-in-out;
+  -moz-transition: all 1400ms ease-in-out;
+  -o-transition: all 1400ms ease-in-out;
+  transition: all 1400ms ease-in-out;
+}
+/* line 70, ../scss/start.scss */
+ul li.control-group.edit {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+}
+/* line 74, ../scss/start.scss */
+ul li.control-group.edit.hide {
+  visibility: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+}
+/* line 80, ../scss/start.scss */
+ul li.control-group.edit.hide > .button-group {
+  display: none;
+}
+
+/* line 92, ../scss/start.scss */
+.wrapper-card ul.column-group {
+  margin-left: 10em;
+  text-align: center;
+}
+/* line 95, ../scss/start.scss */
+.wrapper-card ul.column-group li {
+  height: 300px;
+  border: 1px solid #fa0387;
+  position: relative;
+  background-color: black;
+  background-size: cover;
+  background-image: url("card.png");
+  margin-right: -5em;
+  -webkit-border-radius: 10px 10px;
+  -moz-border-radius: 10px / 10px;
+  border-radius: 10px / 10px;
+}
+/* line 105, ../scss/start.scss */
+.wrapper-card ul.column-group li#card-1 {
+  z-index: 1;
+}
+/* line 107, ../scss/start.scss */
+.wrapper-card ul.column-group li#card-1:hover {
+  z-index: 999;
+}
+/* line 112, ../scss/start.scss */
+.wrapper-card ul.column-group li#card-2 {
+  z-index: 2;
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+/* line 115, ../scss/start.scss */
+.wrapper-card ul.column-group li#card-2:hover {
+  z-index: 999;
+}
+/* line 120, ../scss/start.scss */
+.wrapper-card ul.column-group li#card-3 {
+  -webkit-transform: rotate(20deg);
+  -moz-transform: rotate(20deg);
+  -ms-transform: rotate(20deg);
+  -o-transform: rotate(20deg);
+  transform: rotate(20deg);
+  z-index: 3;
+  margin-top: 3em;
+}
+/* line 124, ../scss/start.scss */
+.wrapper-card ul.column-group li#card-3:hover {
+  z-index: 999;
+}

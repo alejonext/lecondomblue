@@ -1,0 +1,9 @@
+require('angular');
+require('angular-route');
+require('angular-animate');
+require('angular-messages');
+require('angular-sanitize');
+require('angular-resource');
+require('angular-touch');
+require('ink.angular');
+require('angular-credit-cards');

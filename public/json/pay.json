@@ -1,0 +1,14 @@
+{
+	"coinbase" : {
+		"button": {
+			"price_currency_iso": "USD",
+			"type": "buy_now",
+			"price_string": 0,
+			"custom": 0,
+			"subscription": false,
+			"callback_url": "",
+			"description": "",
+			"include_email" : true
+		}
+	}
+}

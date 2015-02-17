@@ -1,0 +1,135 @@
+ /**
+ * Ink
+ *
+ * A set of tools for quick development of web interfaces.
+ *
+ * @package   Ink
+ * @author    Sapo Ink Team
+ * @license   http://opensource.org/licenses/MIT MIT
+ * @link      http://ink.sapo.pt
+ * @version   3.1.3
+ */
+// Import Compass Core
+@import "contrib/compass/css3";
+@import "contrib/compass/utilities";
+
+// IMPORT CONFIG FILES (THESE CONTAIN VARIABLE DEFINITIONS)
+@import "config/common";
+@import "config/typography";
+@import "config/colors";
+@import "config/alerts";
+@import "config/buttons";
+@import "config/classnames";
+@import "config/forms";
+@import "config/grid";
+@import "config/labels";
+@import "config/badges";
+@import "config/navigation";
+@import "config/tables";
+@import "config/images";
+@import "config/js";
+
+// IMPORT CONFIG FILES (THESE CONTAIN VARIABLE DEFINITIONS)
+@import "mixins/quick-start";
+
+@include generate-quick-start($grid-breakpoints);
+
+body.name{
+	background-image: url('back.png');
+	background-size: cover;
+	background-size :fixed;
+}
+
+#bottom-bar {
+	width : 100%;
+	z-index: 100;
+	position: fixed;
+	nav {
+		position: relative;
+	}
+}
+a#logo {
+	> img {
+		max-width: 100px;
+	}
+}
+ul{
+	&.mention {
+		
+	}
+
+	.control{
+		&.button-group {
+			> .#{$button-class-name} {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}	
+	}
+	
+	li{
+		&.control-group {
+			visibility:visible;
+			@include transition(compact(all 1400ms ease-in-out));
+			&.edit {
+				visibility:visible;
+				height: auto;
+				opacity:1;
+				&.hide {
+					visibility:hidden;	
+					max-height: 0;
+					opacity: 0;
+					padding: 0;
+					margin: 0;
+					> .button-group {
+						display: none;
+					}
+				}
+			}
+			
+		}
+	}
+}
+
+
+.wrapper-card {
+	ul.column-group {
+		margin-left: 10em;
+		text-align:center;
+		li {
+			height:300px;
+			//width:200px;
+			border:1px solid $pink;
+			position:relative;
+			background-color : $black;
+			background-size: cover;
+			background-image : url('card.png');
+			margin-right: -5em;
+			@include border-radius($button-margin * 2, $button-margin * 2);
+			&#card-1 {
+				z-index:1;
+				&:hover {
+					z-index : 999;
+				}
+			}
+  
+			&#card-2 {
+				z-index:2;
+				@include rotate( 10deg );
+				&:hover {
+					z-index : 999;
+				}
+			}
+  
+			&#card-3 {
+				@include rotate( 20deg );
+				z-index:3;
+				margin-top: 3em;
+				&:hover {
+					z-index : 999;
+				}
+			}
+			
+		}
+	}
+}

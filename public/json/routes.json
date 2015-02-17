@@ -1,0 +1,24 @@
+{
+	"user":[
+		"/",
+		"/pagar",
+		"/orden",
+		"/fqa",
+		"/terminos",
+		"/privacidad",
+		"/generar/:id",
+		"/contacto",
+		"/otros"
+	],
+	"require" : [
+		"K",
+		"ng",
+		"ngTouch",
+		"ngRoute",
+		"ngAnimate",
+		"ngMessages",
+		"ngResource",
+		"ngSanitize",
+		"ink.angular"
+	]
+}

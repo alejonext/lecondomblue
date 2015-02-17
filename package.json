@@ -1,0 +1,56 @@
+{
+	"name": "lecondonblue",
+	"version": "0.0.16",
+	"description": "Sistema de montaje envio de condones",
+	"main": "bin/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon bin/index.js"
+	},
+	"author": "Alejo Next <alejonext@gmail.com>",
+	"pre-push": [
+		"rm -rf tmp",
+		"rm -rf .sass-cache"
+	],
+	"license": "ISC",
+	"dependencies": {
+		"async": ">=0.9.0",
+		"moment": ">=2.8.4",
+		"underscore": ">=1.7.0",
+		"underscore.string": ">=2.4.0",
+		"express": ">=4.10.4",
+		"browserify": ">=7.0.0",
+		"uglifyjs": ">=2.3.6",
+		"node-sass": ">=1.2.3",
+		"mongoose": ">=3.8.20",
+		"mongoose-findorcreate": ">=0.1.2",
+		"express-session": ">=1.9.3",
+		"passport-facebook": ">=1.0.3",
+		"passport-twitter": ">=1.0.2",
+		"passport-google-oauth": ">=0.1.5",
+		"passport": ">=0.2.1",
+		"angular": ">=1.3.5",
+		"angular-route": ">=1.3.5",
+		"angular-animate": ">=1.3.5",
+		"angular-messages": ">=1.3.5",
+		"angular-sanitize": ">=1.3.5",
+		"angular-resource": ">=1.3.5",
+		"angular-touch": ">=1.3.5",
+		"ink.angular": ">=0.0.4",
+		"angular-credit-cards": ">=1.0.4",
+		"morgan": ">=1.5.0",
+		"body-parser": ">=1.10.0",
+		"compression": ">=1.2.1",
+		"serve-favicon": ">=2.1.7",
+		"cookie-parser": ">=1.3.3",
+		"flash": ">=1.1.0",
+		"sentence-case": "*",
+		"camel-case": "*",
+		"creditcards": "*",
+		"jade": ">=1.8.1",
+		"zombie" : "*"
+	},
+	"devDependencies": {
+		"pre-git": "^0.1.1"
+	}
+}

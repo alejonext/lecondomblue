@@ -1,0 +1,48 @@
+@mixin generate-quick-start ($breakpoints) {
+
+	@each $breakpoint in $breakpoints {
+
+		$media:             nth($breakpoint,1);
+		$class-name:        nth($breakpoint,2);
+		$minimum-width:     nth($breakpoint,3);
+		$maximum-width:     nth($breakpoint,4);
+		$gutter-width:      nth($breakpoint,5);
+		$base-font-size:    nth($breakpoint,6);
+		$no-media-query:    nth($breakpoint,7);
+
+		@if $minimum-width and not $maximum-width {
+			/* for #{$class-name} screens not min and not max */
+			@media #{$media} and (min-width: $minimum-width) {
+				#bottom-bar {
+					bottom : 1.5em;
+				}
+				/* your css for #{$class-name} screens goes here ... */
+
+			}
+		}
+
+		@if $minimum-width and $maximum-width {
+			/* for #{$class-name} screens min and max */
+			@media #{$media} and (min-width: $minimum-width) and (max-width: $maximum-width) {
+				#bottom-bar {
+					bottom : .75em;
+				}
+				
+				/* your css for #{$class-name} screens goes here ... */
+			}
+		}
+
+		@if not $minimum-width and $maximum-width {
+			/* for #{$class-name} screens not min and max */
+			@media #{$media} and (max-width: $maximum-width) {
+
+				#bottom-bar {
+					bottom : 0;
+				}
+				
+				/* your css for #{$class-name} screens goes here ... */
+
+			}
+		}
+	}
+}

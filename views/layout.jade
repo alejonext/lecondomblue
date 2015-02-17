@@ -1,0 +1,32 @@
+doctype html
+html(lang="es", ng-app="blue" )
+	head
+		base( href="#{SECURE}#{URL_DOMAIN}/" )
+		link(rel="stylesheet", type="text/css", href="public/main.css")
+		link(rel="stylesheet", type="text/css", href="public/start.css")
+		title Le Condom Blue
+	body.name
+		block content
+		#bottom-bar
+			.ink-grid.ie7
+				nav.ink-navigation.align-center
+					ul.menu.horizontal.black.push-left
+						if login
+							li: a(href="#{SECURE}#{URL_DOMAIN}/ordenes")= me.data.displayName
+							li: a(href="#{SECURE}#{URL_DOMAIN}/auth/logout") Salir
+						else
+							li: a Entrar con
+							li: a(href="#{SECURE}#{URL_DOMAIN}/auth/google") Google
+							li: a(href="#{SECURE}#{URL_DOMAIN}/auth/facebook") facebook
+							li: a(href="#{SECURE}#{URL_DOMAIN}/auth/twitter") Twitter
+					a#logo(href="#{SECURE}#{URL_DOMAIN}/")
+						img(src="public/logo_120.png", alt="Le condom blue")
+					ul.menu.horizontal.black.push-right
+						li: a(href="#{SECURE}#{URL_DOMAIN}/fqa") FQA
+						li: a(href="#{SECURE}#{URL_DOMAIN}/terminos") Terminos
+						li: a(href="#{SECURE}#{URL_DOMAIN}/privacidad") Privacidad
+						li: a(href="#{SECURE}#{URL_DOMAIN}/contacto") Contacto
+		
+		script(type='text/javascript', src="public/lib.js" )
+		script(type='text/javascript', src="public/app.js" )
+		script(type='text/javascript' ) window.angular.module('K',[]).constant('SESSION', '#{sessionId}');

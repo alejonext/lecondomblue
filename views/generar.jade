@@ -1,0 +1,79 @@
+.all-100
+	form#genera.ink-form.all-70.push-center( ng-submit="generate()", name="genera")
+		nav.ink-navigation
+			ul.mention.pills.black 
+				li: a(ng-click="goTo(0)")
+					i.fa-2x.fa( class="fa-{{ status == 0 ? 'dot-' : '' }}circle-o" )
+				li: a(ng-click="goTo(1)")
+					i.fa-2x.fa( class="fa-{{ status == 1 ? 'dot-' : '' }}circle-o" )
+				li: a(ng-click="goTo(2)")
+					i.fa-2x.fa( class="fa-{{ status == 2 ? 'dot-' : '' }}circle-o" )
+				li: a(ng-click="goTo(3)")
+					i.fa-2x.fa( class="fa-{{ status == 3 ? 'dot-' : '' }}circle-o" )
+				li: a(ng-click="goTo(4)")
+					i.fa-2x.fa( class="fa-{{ status == 4 ? 'dot-' : '' }}circle-o" )
+				li: a(ng-click="goTo(5)")
+					i.fa-2x.fa( class="fa-{{ status == 5 ? 'dot-' : '' }}circle-o" )
+				li: a(ng-click="goTo(6)")
+					i.fa-2x.fa( class="fa-{{ status == 6 ? 'dot-' : '' }}circle-o" )
+
+		ul.unstyled( status="status")
+			li.control-group.edit
+				label( for="cada" ) Cada cuento
+				section.tip( ng-messages="genera.cada.error" )
+					p.tip( ng-message="require" ) Seleciona uno de los tipos de envio
+				- var cada = [ 'Los mas pronto posible', 'Tres meses', 'Seis meses' ];
+				each cb, index in cada
+					input.hide-all(type="radio", name="cada", value=index, id="cada-#{index}", ng-model="cada", ng-required="true")
+				.control.button-group
+					each cb, index in cada
+						label.ink-button(for="cada-#{index}", ng-class="{black : cada == #{index} }")= cb
+
+			li.control-group.edit
+				label( for="tos" ) A quien lo enviamos?
+				section.tip( ng-messages="genera.tos.error" )
+					p.tip( ng-message="require" ) Recuerda quien lo va a recibir
+				.control
+					input#tos(type="text", placeholder="La mujer maravilla", ng-model="tos", name="send.tos", ng-required="true")
+
+			li.control-group.edit
+				label( for="from" ) A nombre de quien lo enviamos?
+				section.tip( ng-messages="genera.from.error" )
+					p.tip( ng-message="require" ) Puedes colocar cualquier nombre, de todos modos es para que nadie se de cuenta
+				.control
+					input#from(type="text", placeholder="El hombre invisible", ng-model="from", name="send.form", ng-required="true")
+
+			li.control-group.edit
+				label( for="addr" ) A donde lo enviamos?
+				section.tip( ng-messages="genera.addr.error" )
+					p.tip( ng-message="require" ) Danos una direccion, si no podremos enviarte nada
+				.control
+					textarea#addr( placeholder="El salon de la justica", ng-model="addr", ng-required="true", name="send.addr")
+
+			li.control-group.edit
+				label( for="www" ) Es endonde?
+				section.tip( ng-messages="genera.www.error" )
+					p.tip( ng-message="require" ) No hemos adivinado en donde es!
+				.control
+					textarea#www( placeholder="El salon de la justica", ng-model="www", ng-required="true", name="send.regs")
+
+			li.control-group.edit
+				label( for="tel" ) Nos das un numero (Puede ser)
+				section.tip( ng-messages="genera.tel.error" )
+					p.tip
+				.control
+					input#tel(type="tel", placeholder="El hombre invisible", ng-model="tel", ng-required="true", name="send.tel")
+
+			li.control-group.edit
+				label( for="paynow" ) Tipo de pago
+				section.tip( ng-messages="genera.paynow.error" )
+					p.tip( ng-message="require" ) Seleciona uno de los tipos de envio
+				- var paynow = [ 'Paypal', 'Tarjeta Credito/Debito', 'Bitcoin', 'PayLatam' ];
+				each cb, index in paynow
+					input.hide-all(type="radio", name="metodo", value=index, id="paynow-#{index}", ng-model="paynow", ng-required="true")
+				.control.button-group
+					each cb, index in paynow
+						label.ink-button(for="paynow-#{index}", ng-class="{black : paynow == #{index} }")= cb
+
+		button.ink-button.pink( ng-click="next()", ng-if="status < 6" ) Sigiente
+		button.ink-button.white( type="submit", ng-if="status >= 6" ) Sigiente
