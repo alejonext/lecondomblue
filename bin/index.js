@@ -33,27 +33,13 @@ async.series({
 		process.env.COMPRESS_RESP_JS = process.env.COMPRESS_RESP_JS || false;
 		process.env.PUBLIC_DATA = path.join(process.env.OPENSHIFT_DATA_DIR, 'tmp');
 
-		/*// KEYS
+		// KEYS
 		if( _.isEmpty(process.env.FACEBOOK_ID) ) return callback(new Error('ID Facebook'));
 		if( _.isEmpty(process.env.FACEBOOK_SECRET)) return callback(new Error('Secret Facebook'));
 		if( _.isEmpty(process.env.GOOGLE_ID)) return callback(new Error('ID Google'));
 		if( _.isEmpty(process.env.GOOGLE_SECRET)) return callback(new Error('Secret Google'));
 		if( _.isEmpty(process.env.TWITTER_ID)) return callback(new Error('ID Twitter'));
 		if( _.isEmpty(process.env.TWITTER_SECRET)) return callback(new Error('Secret Twitter'));
-		*/
-		process.env.FACEBOOK_ID='810919125631829';
-		process.env.FACEBOOK_SECRET='cb6251203378258e00ffd17b6f4a7745';
-		process.env.GOOGLE_ID='666666323660-qal4klork40h2vsb1duoks4pi0ujels6.apps.googleusercontent.com';
-		process.env.GOOGLE_SECRET='5GOFhMZD-IEW8ie5Yd-DY7Kj';
-		process.env.TWITTER_ID='J0dLhBsC7mUjAFOKe51dqKXjx';
-		process.env.TWITTER_SECRET ='omdh6NbGwCA6AgYTt53wgq3HqCFhwCg8uecGzGUlvsGTtBV740';
-		process.env.COINBASE_ID='J0dLhBsC7mUjAFOKe51dqKXjx';
-		process.env.COINBASE_SECRET ='omdh6NbGwCA6AgYTt53wgq3HqCFhwCg8uecGzGUlvsGTtBV740';
-		process.env.URL_DOMAIN ='localhost:3000';
-		process.env.HTTPS_ACTIVE = '';
-		process.env.COMPRESS_RESP_CSS='true';
-		process.env.COMPRESS_RESP_JS='true';
-		process.env.NODE_ENV='production';
 
 		callback();
 	},
